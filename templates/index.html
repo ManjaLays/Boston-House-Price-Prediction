@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .brand-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar-right a {
+            margin-left: 15px;
+        }
+
+        .navbar-right img {
+            width: 40px;
+            height: 40px;
+        }
+
+        h2, p {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h3 {
+            text-align: center;
+            color: #28a745;
+            margin-top: 20px;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            color: #777;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="https://avatars.githubusercontent.com/u/185908608?v=4" alt="Logo">
+            <span class="brand-name">ManjaLays</span>
+        </div>
+        <div class="navbar-center"></div>
+        <div class="navbar-right">
+            <a href="https://github.com/ManjaLays" target="_blank">
+                <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/github.png" alt="github"/>
+            </a>
+            <a href="https://www.linkedin.com/in/its-saanthanu-prasad/" target="_blank">
+                <img width="100" height="100" src="https://img.icons8.com/ios-filled/100/linkedin.png" alt="linkedin"/>
+            </a>
+        </div>
+    </div>
+
+    <h2>Boston Housing Price Prediction</h2>
+    <p>Please fill out the following parameters:</p>
+
+    <form action="/predict" method="post">
+        <label>CRIM:</label>
+        <input type="text" name="CRIM">
+
+        <label>ZN:</label>
+        <input type="text" name="ZN">
+
+        <label>INDUS:</label>
+        <input type="text" name="INDUS">
+
+        <label>CHAS:</label>
+        <input type="text" name="CHAS">
+
+        <label>NOX:</label>
+        <input type="text" name="NOX">
+
+        <label>RM:</label>
+        <input type="text" name="RM">
+
+        <label>AGE:</label>
+        <input type="text" name="AGE">
+
+        <label>DIS:</label>
+        <input type="text" name="DIS">
+
+        <label>RAD:</label>
+        <input type="text" name="RAD">
+
+        <label>TAX:</label>
+        <input type="text" name="TAX">
+
+        <label>PTRATIO:</label>
+        <input type="text" name="PTRATIO">
+
+        <label>B:</label>
+        <input type="text" name="B">
+
+        <label>LSTAT:</label>
+        <input type="text" name="LSTAT">
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+    <div class="footer">
+        &copy; 2025 ManjaLays. All rights reserved.
+    </div>
+
+</body>
+</html>
